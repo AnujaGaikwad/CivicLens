@@ -1,1 +1,22 @@
+version: 0.2
 
+phases:
+  pre_build:
+    commands:
+      - echo "Starting CivicLens build..."
+      - echo "Checking required files..."
+      - test -f index.html
+      - echo "index.html found"
+
+  build:
+    commands:
+      - echo "Building CivicLens..."
+      - echo "No compilation required for static HTML"
+
+  post_build:
+    commands:
+      - echo "CivicLens build completed successfully"
+
+artifacts:
+  files:
+    - index.html
