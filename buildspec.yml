@@ -4,14 +4,15 @@ phases:
   pre_build:
     commands:
       - echo "Starting CivicLens build..."
-      - echo "Checking required files..."
-      - test -f index.html
-      - echo "index.html found"
+      - echo "Checking CivicLens files..."
+      - test -f civiclens_citizen.html
+      - test -f civiclens_admin.html
+      - echo "Both CivicLens HTML files found"
 
   build:
     commands:
       - echo "Building CivicLens..."
-      - echo "No compilation required for static HTML"
+      - echo "Static HTML project - no compilation required"
 
   post_build:
     commands:
@@ -19,4 +20,5 @@ phases:
 
 artifacts:
   files:
-    - index.html
+    - civiclens_citizen.html
+    - civiclens_admin.html
